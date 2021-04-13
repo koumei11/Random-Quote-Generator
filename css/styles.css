@@ -3,12 +3,12 @@
  * Random Quote Generator - CSS
  */
 
- @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i&display=swap");
 
 body {
   background-color: rgb(58, 193, 98);
   color: white;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   padding: 5px;
 }
 
@@ -103,6 +103,15 @@ h1 {
 
 .citation {
   font-style: italic;
+}
+
+.tag {
+  border: solid 2px #ec3e79;
+  border-radius: 10%;
+  padding: 3px;
+  margin-right: 5px;
+  margin-left: 5px;
+  background-color: #ec3e79;
 }
 
 .citation:before {
