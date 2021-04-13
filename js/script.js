@@ -32,8 +32,8 @@ const quote = [
   {
     quote: 'Roads? Where we\'re going we don\'t need roads.',
     source: 'Doc',
-    citation: 'Back to the Future',
-    year: 1985
+    // citation: 'Back to the Future',
+    // year: 1985
   },
   {
     quote: `Hey. Don't ever let somebody tell you... 
@@ -49,15 +49,22 @@ const quote = [
   }
 ];
 
+// console.log(quote);
+
 /***
  * `getRandomQuote` function
 ***/
+function getRandomQuote() {
+  const index = Math.floor(Math.random() * quote.length);
+  // console.log(index);
+  return quote[index];
+}
 
+// console.log(getRandomQuote());
 
 /***
  * `printQuote` function
 ***/
-
 
 
 /***
