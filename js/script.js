@@ -65,7 +65,22 @@ function getRandomQuote() {
 /***
  * `printQuote` function
 ***/
+function printQuote() {
+  const selectedQuote = getRandomQuote();
+  let html = `
+  <p class="quote">${selectedQuote.quote}</p>
+  <p class="source">${selectedQuote.source}`;
 
+  if (selectedQuote.citation !== undefined) {
+    html += `<span class="citation">${selectedQuote.citation}</span>`;
+  }
+  if (selectedQuote.year !== undefined) {
+    html += `<span class="citation">${selectedQuote.year}</span>`;
+  }
+  html += '</p>';
+  // console.log(html);
+  document.querySelector('#quote-box').innerHTML = html;
+}
 
 /***
  * click event listener for the print quote button
