@@ -49,36 +49,36 @@ const quote = [
   }
 ];
 
-// console.log(quote);
-
-/***
- * `getRandomQuote` function
-***/
+/**
+ * Function that returns random quote from quote array
+ * @returns {object} Randomly selected quote
+ */
 function getRandomQuote() {
   const index = Math.floor(Math.random() * quote.length);
-  // console.log(index);
   return quote[index];
 }
 
-// console.log(getRandomQuote());
-
-/***
- * `printQuote` function
-***/
+/**
+ * Function that prints quote information in this page
+ */
 function printQuote() {
   const selectedQuote = getRandomQuote();
+
+  // To add extra info, don't include </p> at the end
   let html = `
   <p class="quote">${selectedQuote.quote}</p>
   <p class="source">${selectedQuote.source}`;
 
+  // Check if there are citation or year
   if (selectedQuote.citation !== undefined) {
     html += `<span class="citation">${selectedQuote.citation}</span>`;
   }
   if (selectedQuote.year !== undefined) {
     html += `<span class="citation">${selectedQuote.year}</span>`;
   }
+
   html += '</p>';
-  // console.log(html);
+
   document.querySelector('#quote-box').innerHTML = html;
 }
 
