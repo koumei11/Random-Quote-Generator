@@ -10,7 +10,7 @@ project 1 - A Random Quote Generator
 /*** 
  * `quotes` array 
 ***/
-const quote = [
+const quotes = [
   {
     quote: 'With great power comes great responsibility.',
     source: 'Peter Benjamin Parker',
@@ -54,27 +54,27 @@ const quote = [
  * @returns {object} Randomly selected quote
  */
 function getRandomQuote() {
-  const index = Math.floor(Math.random() * quote.length);
-  return quote[index];
+  const index = Math.floor(Math.random() * quotes.length);
+  return quotes[index];
 }
 
 /**
  * Function that prints quote information in this page
  */
 function printQuote() {
-  const selectedQuote = getRandomQuote();
+  const quote = getRandomQuote();
 
   // To add extra info, don't include </p> at the end
   let html = `
-  <p class="quote">${selectedQuote.quote}</p>
-  <p class="source">${selectedQuote.source}`;
+  <p class="quote">${quote.quote}</p>
+  <p class="source">${quote.source}`;
 
   // Check if there are citation or year
-  if (selectedQuote.citation !== undefined) {
-    html += `<span class="citation">${selectedQuote.citation}</span>`;
+  if (quote.citation !== undefined) {
+    html += `<span class="citation">${quote.citation}</span>`;
   }
-  if (selectedQuote.year !== undefined) {
-    html += `<span class="citation">${selectedQuote.year}</span>`;
+  if (quote.year !== undefined) {
+    html += `<span class="citation">${quote.year}</span>`;
   }
 
   html += '</p>';
