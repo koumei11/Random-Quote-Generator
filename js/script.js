@@ -105,7 +105,7 @@ function printQuote() {
  */
 function setBackgroundColor() {
   const index = Math.floor(Math.random() * colors.length);
-  document.getElementById('quote-box').style.backgroundColor = colors[index];
+  document.querySelector('body').style.backgroundColor = colors[index];
 }
 
 /***
