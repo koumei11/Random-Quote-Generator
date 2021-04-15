@@ -51,15 +51,9 @@ const quotes = [
 ];
 
 /*** 
- * `colors` array 
+ * `Hexadecimal characters array for color
 ***/
-const colors = [
-  '#2f64b5',
-  '#e8d833',
-  '#e86f33',
-  '#3feabf',
-  '#ea3fcb'
-];
+const characters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'];
 
 /**
  * Function that returns random quote from quote array
@@ -101,11 +95,25 @@ function printQuote() {
 }
 
 /**
+ * Create random color
+ * @returns {string} color string 
+ */
+function createRandomColor() {
+  let color = '#';
+  let index;
+  for (let i = 0; i < 6; i++) {
+    index = Math.floor(Math.random() * characters.length);
+    color += characters[index];
+  }
+  console.log(color);
+  return color;
+}
+
+/**
  * Set background color
  */
 function setBackgroundColor() {
-  const index = Math.floor(Math.random() * colors.length);
-  document.querySelector('body').style.backgroundColor = colors[index];
+  document.querySelector('body').style.backgroundColor = createRandomColor();
 }
 
 /***
